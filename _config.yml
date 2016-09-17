@@ -1,12 +1,12 @@
-name : Foundation5/github pages/Jykill starter
-brand : My Project
-description : This is the description of my project
-keyword : 
-url : http://daigofuji.github.io/jekyll-foundation-6-starter/
-email : daigo@daigofujiwara.com
-twitter : DaigoFuji
-github : DaigoFuji
-author : Daigo Fujiwara
+name : Unknit Studios Official Website
+brand : Unknit Studios
+description :
+keyword :
+url : http://unknit.github.io
+email : hello@unknit.net
+twitter : Johnbpo
+github : UnknitStudios
+author : John Bernier
 year : 2016
 markdown : kramdown
 exclude :

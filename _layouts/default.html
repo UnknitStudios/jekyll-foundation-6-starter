@@ -12,6 +12,7 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800|Raleway:400,200,700" rel="stylesheet" type="text/css">
     <!-- Fount Awesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/app.css">
 
@@ -32,54 +33,37 @@
     <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{{ page.description }}">
     <meta name="twitter:image" content="{{ page.imageurl }}">
-  
-  </head>        
+
+  </head>
   <body>
 
-    <div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <header class="header">
+      <!--
+      <h1 class="headline">Unknit  <small>Studios</small></h1>
+    -->
+      <a href="index.html"><img class="logo" src="img/logo.png" alt="Unknit Logo"></a>
+      <ul class="header-subnav">
+        {% include nav.html %}
+      </ul>
+    </header>
 
-        <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-         <ul class="vertical menu">
-            {% include nav.html %}
-          </ul>
-        </div>
+    <div class="content">
+      <div class="row column">
 
-        <div class="off-canvas-content" data-off-canvas-content>
+        {{ content }}
 
-          <div class="title-bar">
-            <div class="title-bar-left">
-              <span class="title-bar-title mas"><a href="{{ site.url }}">{{ site.brand }}</a></span>
-            </div>
-            <div class="title-bar-right mts">
-              <ul class="menu quiet show-for-medium">
-                {% include nav.html %}
-              </ul>
-              <button class="menu-icon quiet hide-for-medium" type="button" data-toggle="offCanvasRight"><i class="fa fa-bars" aria-hidden="true"></i> MENU</button>
-            </div>
-          </div>
-          <div class="content">
-            <div class="row column">
-
-              {{ content }}
-              
-            </div>
-            <footer class="site-footer row column mtl" role="contentinfo">
-              <hr/>
-              <ul class="menu quiet copyright align-right">
-                <li><a href="https://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i>@{{ site.twitter }}</a></li>
-                <li><a href="https://github.com/{{ site.github }}/"><i class="fa fa-github"></i>@{{ site.github }}</a></li>
-              </ul>
-              <ul class="menu quiet">
-                {% include nav.html %}
-              </ul>
-            </footer>
-          </div><!-- end .content -->
-
-        </div><!-- end .off-canvas-content -->
-      </div><!-- end .off-canvas-wrapper-inner -->
-    </div><!-- end .off-canvas-wrapper -->
-
+      </div>
+      <footer class="site-footer row column mtl" role="contentinfo">
+        <hr/>
+        <ul class="menu quiet copyright align-right">
+          <li><a href="https://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i>@{{ site.twitter }}</a></li>
+          <li><a href="https://github.com/{{ site.github }}/"><i class="fa fa-github"></i>@{{ site.github }}</a></li>
+        </ul>
+        <ul class="menu quiet">
+          {% include nav.html %}
+        </ul>
+      </footer>
+    </div><!-- end .content -->
 
 
     <!-- Loading JavaScripts
@@ -93,13 +77,13 @@
 
     <!-- Google Analytics CHANGE THIS TO YOUR UA CODE-->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-8418273-8', 'auto');
-      ga('send', 'pageview');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-8418273-8', 'auto');
+    ga('send', 'pageview');
     </script>
 
   </body>
-</html>
+  </html>
