@@ -1,13 +1,19 @@
-name : Unknit Studios Official Website
+name : Unknit Studios
 brand : Unknit Studios
 description :
 keyword :
 url : http://unknit.github.io
 email : hello@unknit.net
-twitter : Johnbpo
+facebook : UnknitStudios
+twitter : UnknitStudios
+googleplus: 102886758018079744317
 github : UnknitStudios
 author : John Bernier
 year : 2016
 markdown : kramdown
 exclude :
   - node_modules
+gems :
+  - jekyll-paginate
+paginate: 5
+paginate_path: "/blog/page:num"

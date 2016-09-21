@@ -1,0 +1,47 @@
+---
+layout: default
+title: Brag-Zone
+description: Unknit Studios's blog
+keywords: unknit, studios, video, games, about
+---
+<div class="text-center column row">
+  <ul class="pagination" role="navigation" aria-label="Pagination">
+    {% if paginator.previous_page %}
+    <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
+    {% else %}
+    <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
+    {% endif %}
+    <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+    {% if paginator.next_page %}
+    <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
+    {% else %}
+    <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
+    {% endif %}
+  </ul>
+</div>
+
+{% for post in paginator.posts %}
+<div class="card row wide">
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  {{ post.excerpt }}
+</div>
+{% endfor %}
+
+<div class="text-center column row">
+  <ul class="pagination" role="navigation" aria-label="Pagination">
+    {% if paginator.previous_page %}
+    <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
+    {% else %}
+    <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
+    {% endif %}
+    <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+    {% if paginator.next_page %}
+    <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
+    {% else %}
+    <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
+    {% endif %}
+  </ul>
+</div>
