@@ -22,11 +22,11 @@ keywords: unknit, studios, video, games, about
 
 {% for post in paginator.posts %}
 <div class="card row wide">
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  {{ post.excerpt }}
   <p class="author">
+    <a href="{{ post.url }}">READ MORE</a>
     <span class="date">{{ post.date }}</span>
   </p>
-  {{ post.excerpt }}
 </div>
 {% endfor %}
 
