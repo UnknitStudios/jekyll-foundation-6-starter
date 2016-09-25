@@ -64,6 +64,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-angular (0.1.1)
+      jekyll (>= 2)
     jekyll-coffeescript (1.0.1)
       coffee-script (~> 2.2)
     jekyll-feed (0.5.1)
@@ -139,6 +141,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-angular
   jekyll-paginate
 
 BUNDLED WITH
