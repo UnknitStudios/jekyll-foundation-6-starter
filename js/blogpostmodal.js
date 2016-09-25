@@ -1,4 +1,5 @@
-angular.module('BlogPostModal', []).controller('ModalCtrl', function($scope, $modal, $log) {
+angular.module('BlogPostModal', ['mm.foundation'])
+.controller('BlogPostModalController', function($scope, $modal, $log) {
 
   $scope.open = open;
 

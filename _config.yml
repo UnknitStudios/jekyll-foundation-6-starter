@@ -12,7 +12,9 @@ author : John Bernier
 year : 2016
 markdown : kramdown
 exclude :
+  - package.json
   - node_modules
+  - gulpfile.js
 gems :
   - jekyll-paginate
   - jekyll-angular

@@ -4,57 +4,60 @@ title: Brag-Zone
 description: Unknit Studios's blog
 keywords: unknit, studios, video, games, about
 ---
-<script src="/js/blogpostsearch.js"></script>
-<script src="/js/blogpostmodal.js"></script>
+<script src="/js/blog.js"></script>
 
-<div class="posts" ng-controller="SearchCtrl">
-  <input type="search" class="search" ng-model="query">
-  <ul>
-    <li ng-repeat="post in posts | filter:query ">
-      <date ng-bind="post.date"></date>
-      <a href="{% raw %}{{ post.url }}{% endraw %}" ng-bind="post.title"></a>
-    </li>
-  </ul>
-</div>
+<div ng-app="Blog">
 
-<div class="text-center column row">
-  <ul class="pagination" role="navigation" aria-label="Pagination">
-    {% if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
-    {% else %}
-    <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
-    {% endif %}
-    <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
-    {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
-    {% else %}
-    <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
-    {% endif %}
-  </ul>
-</div>
+  <div class="posts" ng-controller="PostsListController">
+    <input type="search" class="search" ng-model="query">
+    <ul>
+      <li ng-repeat="post in posts | filter:query ">
+        <date ng-bind="post.date"></date>
+        <a href="{% raw %}{{ post.url }}{% endraw %}" ng-bind="post.title"></a>
+      </li>
+    </ul>
+  </div>
 
-{% for post in paginator.posts %}
-<div ng-show class="posts card row wide">
-  {{ post.excerpt }}
-  <p class="author">
-    <a href="{{ post.url }}">READ MORE</a>
-    <span class="date"><i>{{ post.date | date_to_string }}</i></span>
-  </p>
-</div>
-{% endfor %}
+  <div class="text-center column row">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      {% if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
+      {% else %}
+      <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
+      {% endif %}
+      <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+      {% if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
+      {% else %}
+      <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
+      {% endif %}
+    </ul>
+  </div>
 
-<div class="text-center column row">
-  <ul class="pagination" role="navigation" aria-label="Pagination">
-    {% if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
-    {% else %}
-    <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
-    {% endif %}
-    <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
-    {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
-    {% else %}
-    <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
-    {% endif %}
-  </ul>
+  {% for post in paginator.posts %}
+  <div class="posts card row wide">
+    {{ post.excerpt }}
+    <p class="author">
+      <a href="{{ post.url }}">READ MORE</a>
+      <span class="date"><i>{{ post.date | date_to_string }}</i></span>
+    </p>
+  </div>
+  {% endfor %}
+
+  <div class="text-center column row">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      {% if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous page">« <span class="show-for-sr">Previous page</span></a></li>
+      {% else %}
+      <li class="disabled">« <span class="show-for-sr">Previous page</span></a></li>
+      {% endif %}
+      <li class="current"><span class="show-for-sr"></span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+      {% if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path }}" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
+      {% else %}
+      <li class="disabled">» <span class="show-for-sr">Next page</span></a></li>
+      {% endif %}
+    </ul>
+  </div>
+
 </div>

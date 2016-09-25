@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var $    = require('gulp-load-plugins')();
+const gulp    = require('gulp');
+const $       = require('gulp-load-plugins')();
+const concat  = require('gulp-concat');
 
-var sassPaths = [
+const sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/motion-ui/src'
 ];
